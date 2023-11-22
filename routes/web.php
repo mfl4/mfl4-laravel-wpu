@@ -1,8 +1,7 @@
 <?php
 
-use App\Models\Post;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +12,7 @@ use App\Http\Controllers\PostController;
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
 |
-*/
+ */
 
 Route::get('/', function () {
     return view('home', [
@@ -32,5 +31,4 @@ Route::get('/about', function () {
 
 Route::get('/posts', [PostController::class, 'index']);
 
-
-Route::get('/posts/{slug}', [PostController::class, 'show']);
+Route::get('/posts/{post:slug}', [PostController::class, 'show']);
