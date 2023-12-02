@@ -6,24 +6,48 @@
     <div class="row justify-content-center mt-5">
         <div class="col-lg-5">
             <main class="form-registration w-100 m-auto">
-                <form>
-                    <img class="mb-5" src="{{ url('img/mfl4-nobg.png') }}" alt="">
-
+                <form action="/register" method="post">
+                    @csrf
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="name" placeholder="full name">
-                        <label for="name">Name</label>
+                        <input required type="text" class="form-control rounded-top-3 @error('name') is-invalid @enderror"
+                            id="name" name="name" placeholder="fullname" value="{{ old('name') }}">
+                        <label class="form-label" for="name">Name</label>
+                        @error('name')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="username" placeholder="username" class="rounded-0">
-                        <label for="username">Username</label>
+                        <input required type="text" class="form-control @error('username') is-invalid @enderror"
+                            id="username" name="username" placeholder="username" value="{{ old('username') }}">
+                        <label class="form-label" for="username">Username</label>
+                        @error('username')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
-                        <label for="email">Email address</label>
+                        <input required type="email" class="form-control @error('email') is-invalid @enderror"
+                            id="email" name="email" placeholder="name@example.com" value="{{ old('email') }}">
+                        <label class="form-label" for="email">Email address</label>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                        <label for="password">Password</label>
+                        <input required type="password"
+                            class="form-control rounded-bottom-3 @error('password') is-invalid @enderror" id="password"
+                            name="password" placeholder="Password">
+                        <label class="form-label" for="password">Password</label>
+                        @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
 
                     <button class="btn btn-primary w-100 py-2 mt-3" type="submit">Register</button>

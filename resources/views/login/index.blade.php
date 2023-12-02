@@ -4,17 +4,23 @@
     <h1 class="mb-3 text-center fw-bold">{{ $title }}</h1>
 
     <div class="row justify-content-center mt-5">
-        <div class="col-lg-4">
+        <div class="col-md-4">
+
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>{{ session('success') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <main class="form-signin w-100 m-auto">
                 <form>
-                    <img class="mb-5" src="{{ url('img/mfl4-nobg.png') }}" alt="">
-
                     <div class="form-floating">
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="email" name="email"
+                            placeholder="name@example.com">
                         <label for="email">Email address</label>
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                         <label for="password">Password</label>
                     </div>
                     <div class="form-floating">
