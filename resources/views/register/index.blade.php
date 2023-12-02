@@ -9,12 +9,12 @@
                 <form>
                     <img class="mb-5" src="{{ url('img/mfl4-nobg.png') }}" alt="">
 
-                    <div class="form-floating rounded">
-                        <input type="text" class="form-control" id="name" placeholder="Freya Jayawardana">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="name" placeholder="full name">
                         <label for="name">Name</label>
                     </div>
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="username" placeholder="fre">
+                        <input type="text" class="form-control" id="username" placeholder="username" class="rounded-0">
                         <label for="username">Username</label>
                     </div>
                     <div class="form-floating">

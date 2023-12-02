@@ -12,10 +12,19 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-
 }
 
 .form-registration input {
     margin-bottom: -1px;
     border-radius: 0;
+}
+
+.form-registration input[id="name"] {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.form-registration input[id="password"] {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
