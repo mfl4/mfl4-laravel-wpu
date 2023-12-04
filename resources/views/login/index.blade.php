@@ -12,15 +12,31 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+
+            @if (session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>{{ session('loginError') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
             <main class="form-signin w-100 m-auto">
-                <form>
+                <form action="/login" method="post">
+                    @csrf
                     <div class="form-floating">
                         <input type="email" class="form-control" id="email" name="email"
-                            placeholder="name@example.com">
+                            placeholder="name@example.com" autofocus required @error('email') is-invalid @enderror
+                            value="{{ old('email') }}">
                         <label for="email">Email address</label>
+                        @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating">
-                        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password"
+                            required>
                         <label for="password">Password</label>
                     </div>
                     <div class="form-floating">
