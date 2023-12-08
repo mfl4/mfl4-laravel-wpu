@@ -18,3 +18,13 @@
     margin-bottom: -1px;
     border-radius: 0;
 }
+
+#sidebar .nav-link:hover {
+    background-color: #1d77ff;
+    border-radius: 10px;
+}
+
+#sidebar .active {
+    background-color: #0054d1;
+    border-radius: 10px;
+}

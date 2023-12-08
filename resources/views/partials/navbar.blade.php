@@ -38,8 +38,8 @@
                             <li>
                                 <form action="/logout" method="post">
                                     @csrf
-                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-left"></i> Log
-                                        Out</button>
+                                    <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-left"></i>
+                                        Logout</button>
                                 </form>
                             </li>
                         </ul>
