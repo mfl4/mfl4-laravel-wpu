@@ -5,7 +5,7 @@
     <hr class="my-3 border-5 border-black">
 
     @if (session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show col-lg-8" role="alert">
             {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -33,7 +33,12 @@
                                     class="bi bi-eye"></i></a>
                             <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-outline-warning"><i
                                     class="bi bi-pencil-square"></i></a>
-                            <a href="/dashboard/posts" class="btn btn-outline-danger"><i class="bi bi-trash"></i></a>
+                            <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                                @method('delete')
+                                @csrf
+                                <button class="btn btn-outline-danger" onclick="return confirm('Are you sure?')"><i
+                                        class="bi bi-trash"></i></button>
+                            </form>
                         </td>
                     </tr>
                 @endforeach

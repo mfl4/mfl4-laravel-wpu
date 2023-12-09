@@ -11,8 +11,13 @@
                 <a href="/dashboard/posts/{{ $post->slug }}/edit" class="btn btn-outline-warning"><i
                         class="bi bi-pencil-square"></i>
                     Edit</a>
-                <a href="/dashboard/posts" class="btn btn-outline-danger"><i class="bi bi-trash"></i>
-                    Delete</a>
+                <form action="/dashboard/posts/{{ $post->slug }}" method="post" class="d-inline">
+                    @method('delete')
+                    @csrf
+                    <button class="btn btn-outline-danger" onclick="return confirm('Are you sure?')"><i
+                            class="bi bi-trash"></i>
+                        Delete</button>
+                </form>
 
                 <img src="https://source.unsplash.com/1200x400?{{ $post->category->name }}" class="img-fluid mt-3">
 
