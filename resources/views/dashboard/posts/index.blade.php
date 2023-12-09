@@ -3,6 +3,14 @@
 @section('container')
     <h1>Posts Management</h1>
     <hr class="my-3 border-5 border-black">
+
+    @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+
     <div class="table-responsive col-lg-8">
         <a href="/dashboard/posts/create" class="btn btn-outline-primary mb-3"><i class="bi bi-plus"></i> Add New Post</a>
         <table class="table table-striped table-sm">
@@ -15,7 +23,6 @@
                 </tr>
             </thead>
             <tbody>
-
                 @foreach ($posts as $post)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
