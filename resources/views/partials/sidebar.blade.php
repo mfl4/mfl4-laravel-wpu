@@ -11,7 +11,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-light {{ request()->is('dashboard/posts') ? 'active' : '' }}"
+                <a class="nav-link text-light {{ request()->is('dashboard/posts*') ? 'active' : '' }}"
                     href="/dashboard/posts">
                     <i class="bi bi-file-earmark-text"></i> Post Management
                 </a>
