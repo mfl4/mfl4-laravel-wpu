@@ -16,30 +16,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::create([
+            'name' => 'Frehan Lubis',
+            'username' => 'fl777',
+            'email' => 'l200220777@student.ums.ac.id',
+            'password' => bcrypt('han123'),
+        ]);
 
-        // User::create([
-        //     'name' => 'John Doe',
-        //     'email' => 'john@example.com',
-        //     'password' => bcrypt('password'),
-        // ]);
+        User::create([
+            'name' => 'Mhd. Farhan Lubis',
+            'username' => 'mfl4',
+            'email' => 'mfl4@gmail.com',
+            'password' => bcrypt('far123'),
+        ]);
 
-        // User::create([
-        //     'name' => 'Jack Doe',
-        //     'email' => 'jack@example.com',
-        //     'password' => bcrypt('password'),
-        // ]);
+        User::create([
+            'name' => 'Freya Jayawardana',
+            'username' => 'fj4',
+            'email' => 'fj4@gmail.com',
+            'password' => bcrypt('fre123'),
+        ]);
 
-        // User::create([
-        //     'name' => 'Jane Doe',
-        //     'email' => 'jane@example.com',
-        //     'password' => bcrypt('password'),
-        // ]);
-
-        User::factory(10)->create();
+        User::factory(12)->create();
 
         Category::create([
             'name' => 'Personal',
@@ -56,7 +54,17 @@ class DatabaseSeeder extends Seeder
             'slug' => 'design',
         ]);
 
-        Post::factory(20)->create();
+        Category::create([
+            'name' => 'Music',
+            'slug' => 'music',
+        ]);
+
+        Category::create([
+            'name' => 'Travel',
+            'slug' => 'travel',
+        ]);
+
+        Post::factory(25)->create();
 
         // Post::create([
         //     'title' => 'First Post',
