@@ -8,17 +8,18 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'home' ? 'active' : '' }}" aria-current="page"
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page"
                         href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'about' ? 'active' : '' }}" href="/about">About</a>
+                    <a class="nav-link {{ request()->is('about') ? 'active' : '' }}" href="/about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'posts' ? 'active' : '' }}" href="/posts">Blog</a>
+                    <a class="nav-link {{ request()->is('posts*') ? 'active' : '' }}" href="/posts">Blog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ $active === 'categories' ? 'active' : '' }}" href="/categories">Categories</a>
+                    <a class="nav-link {{ request()->is('categories*') ? 'active' : '' }}"
+                        href="/categories">Categories</a>
                 </li>
             </ul>
 
@@ -46,7 +47,7 @@
                     </li>
                 @else
                     <li class="nav-item">
-                        <a class="nav-link {{ $active === 'login' ? 'active' : '' }}" href="/login"><i
+                        <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="/login"><i
                                 class="bi bi-box-arrow-in-right"></i> Log In</a>
                     </li>
                 @endauth
